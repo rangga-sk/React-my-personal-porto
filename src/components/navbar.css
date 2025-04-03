@@ -58,7 +58,7 @@ nav .navhome-img {
     border-radius: 20px;
     color: green;
     margin-top: 1px;
-    background-color: white;
+    background-color: none;
     /* text-underline-offset: 5px; */
     font-size: 16px;
 }
