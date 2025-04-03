@@ -37,8 +37,8 @@ export default function Navbar() {
                     <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact</button>
                     {isOpen && (
                         <div className="navDropdown">
-                            <a href="">E-Mail</a>
-                            <a href="">Phone</a>
+                            <a href="mailto:sukmana.vector@gmail.com" target='_blank'>E-Mail</a>
+                            <a href="https://wa.me/0895622554047" target='_blank'>Phone</a>
                         </div>
                     )}
                 </ol>
