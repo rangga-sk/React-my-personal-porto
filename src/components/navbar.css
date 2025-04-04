@@ -12,6 +12,10 @@ nav {
     /* border: 1px solid blue; */
 }
 
+nav .nav-name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 nav .img-nama {
     display: flex;
     flex-direction: row;

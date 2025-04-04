@@ -4,10 +4,19 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
     
     const [isOpen, setIsOpen] = useState(false);    
+    const [isScroll, setIsScroll] = useState(false);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 200) {
+            setIsScroll(!isOpen);
+        } else {
+            setIsScroll(false);
+        }
+    });
 
     // close dropdown jika user klik diluar tombol dropdown
     useEffect(() => {
@@ -25,10 +34,10 @@ export default function Navbar() {
 
     return (
         <>
-            <nav>
+            <nav style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)' }}>
                 <div className='img-nama'>
                     <img className='navhome-img' src="./src/assets/react.svg"/>
-                    <span>RANGGA SUKMANA MILDAN</span>
+                    <span className='nav-name'>RANGGA SUKMANA MILDAN</span>
                 </div>
                 <ol className='olnav'>
                     <li className='linav'>About</li>

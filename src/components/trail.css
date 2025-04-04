@@ -1,0 +1,26 @@
+.containerTrail {
+    /* display: flex; */
+    /* position: absolute; */
+    /* left: 0; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* border: 1px solid red; */
+    overflow: visible;
+}
+
+.pathSvg {
+    stroke: green;
+    fill: transparent;
+    /* stroke-dasharray: 300;
+    stroke-dashoffset: 300; */
+    /* animation: animatePath 3s ease-in-out infinite; */
+}
+
+@keyframes animatePath {
+   /* 0% {
+    stroke-dashoffset: 300;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  } */
+}
