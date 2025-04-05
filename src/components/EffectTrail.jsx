@@ -1,4 +1,4 @@
-import './trail.css'
+import '../style/trail.css'
 // import { useState, useEffect } from 'react';
 
 export default function EffectTrail() {

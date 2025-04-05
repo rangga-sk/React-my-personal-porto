@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar.jsx'
+import HeadText from './components/HeadText.jsx'
 import EffectTrail from './components/EffectTrail.jsx'
 import './index.css'
 
@@ -11,12 +12,14 @@ function App() {
       <Navbar />
       <div className='mainContainer'>
 
-        <div className='wrap-head'>
+        {/* <div className='wrap-head'>
           <div className='box-head'>
             <span className='head-span-name'>RANGGA SUKMANA MILDAN</span>
             <span className='head-span-job'>Front-end Web Developer / Full-Stack Web Developer</span>
           </div>
-        </div>
+        </div> */}
+
+        <HeadText />
 
         <div className='wrap-profile'>
           <div className='card-profile'>

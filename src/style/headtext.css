@@ -1,0 +1,30 @@
+.wrap-head{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid black; */
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+  
+.wrap-head .box-head {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.wrap-head .box-head .head-span-name {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Monterey';
+    color: rgb(30, 158, 30);
+}
+
+.wrap-head .box-head .head-span-job {
+    font-size: 16px;
+    font-weight: bold;
+    /* font-family: 'Monterey'; */
+    color: rgb(4, 68, 4);
+}
