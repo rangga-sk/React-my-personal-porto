@@ -1,12 +1,33 @@
+@font-face {
+    font-family: 'Harabara';
+    src: url('../assets/list-font/Harabara.ttf');
+}
+
+@font-face {
+    font-family: 'Artificial';
+    src: url('../assets/list-font/Artificial.ttf');
+}
+
+@font-face {
+    font-family: 'Monterey';
+    src: url('../assets/list-font/MontereyMediumFLF.ttf');
+}
+
+@font-face {
+    font-family: 'Monterey-slim';
+    src: url('../assets/list-font/MontereyFLF.ttf');
+}
+
+@font-face {
+    font-family: 'Robotocon';
+    src: url('../assets/list-font/RobotoCondensed-Regular.ttf');
+}
+
 nav {
-    /* border-bottom: 1px solid rgba(35, 145, 35, 0.3); */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    /* background: rgb(209, 255, 209); */
-    /* padding-top: 40px; */
-    /* background: linear-gradient(90deg, limegreen 35%, whitesmoke 100%);  */
     height: 90px;
     display: flex;
     flex-direction: row;
@@ -16,8 +37,11 @@ nav {
 }
 
 nav .nav-name {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(41, 190, 41) !important;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    color: rgb(5, 180, 5);
+    font-size: 25px;
+    font-family: 'Monterey';
+    font-weight: bold;
 }
 
 nav .img-nama {
@@ -27,12 +51,6 @@ nav .img-nama {
     padding-left: 20px;
     align-items: center;
     /* border: 1px solid green; */
-}
-
-nav .img-nama  span {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(1, 27, 1);
 }
 
 nav .navhome-img {
@@ -47,28 +65,24 @@ nav .navhome-img {
     position: relative;
     gap: 100px;
     padding-right: 130px;
-    padding-top: 5px;
     flex-wrap: wrap;
+    align-items: center;
     /* border: 1px solid red; */
 }
 
 .olnav li {
-    font-family: 'Courier New', Courier;
+    font-family: 'Monterey-slim';
     cursor: pointer;
-    /* text-decoration: underline; */
     display: inline-block;
     height: 30px;
-    width: 80px;
-    /* border: 1px solid lime; */
+    width: 95px;
     text-align: center;
-    padding: 10px 5px 1px 5px;
-    /* border-top-left-radius: 10px; */
+    align-content: center;
     border-radius: 20px;
-    color: green;
+    color: rgb(5, 180, 5);
     margin-top: 1px;
     background-color: none;
-    /* text-underline-offset: 5px; */
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .olnav li:hover{
@@ -78,17 +92,17 @@ nav .navhome-img {
 
 .olnav .contact-button {
     background: none;
-    font-family: 'Courier New', Courier;
+    font-family: 'Monterey-slim';
     box-shadow: none;
     outline: none;
-    color: green;
-    font-size: 16px;
+    color: rgb(5, 180, 5);
+    font-size: 20px;
     border: none;
     /* border: 1px solid black; */
     cursor: pointer;
     padding: 0;
-    width: 90px;
-    height: 41px;
+    width: 95px;
+    height: 30px;
     margin-bottom: 0;
     border-radius: 20px;
 }
@@ -102,9 +116,9 @@ nav .navhome-img {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 55px;
     min-width: 120px;
-    right: 110px;
+    right: 115px;
     height: 60px;
     /* padding: 10px; */
     /* border: 1px solid black; */
@@ -116,12 +130,12 @@ nav .navhome-img {
     padding: 10px;
     display: inline-block;
     color: black;
-    height: 30px;
+    height: 80px;
     border-bottom: 1px solid limegreen;
     background-color: rgb(192, 255, 180);
     font-family: 'Courier New', Courier, monospace;
 }
 
 .navDropdown a:hover {
-    background-color: rgb(235, 234, 234);
+    background-color: gainsboro;
 }

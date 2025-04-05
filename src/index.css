@@ -13,6 +13,31 @@ html body {
   z-index: 2;
 }
 
+@font-face {
+  font-family: 'Harabara';
+  src: url('../assets/list-font/Harabara.ttf');
+}
+
+@font-face {
+  font-family: 'Artificial';
+  src: url('../assets/list-font/Artificial.ttf');
+}
+
+@font-face {
+  font-family: 'Monterey';
+  src: url('../assets/list-font/MontereyMediumFLF.ttf');
+}
+
+@font-face {
+  font-family: 'Monterey-slim';
+  src: url('../assets/list-font/MontereyFLF.ttf');
+}
+
+@font-face {
+  font-family: 'Robotocon';
+  src: url('../assets/list-font/RobotoCondensed-Regular.ttf');
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -43,17 +68,17 @@ html body {
 }
 
 .wrap-head .box-head .head-span-name {
-  font-size: 50px;
+  font-size: 80px;
   font-weight: bold;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(45, 209, 45);
+  font-family: 'Monterey';
+  color: rgb(5, 180, 5);
 }
 
 .wrap-head .box-head .head-span-job {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(73, 97, 73);
+  /* font-family: 'Monterey'; */
+  color: rgb(3, 80, 3);
 }
 
 .wrap-profile {
