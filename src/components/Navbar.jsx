@@ -34,13 +34,15 @@ export default function Navbar() {
 
     return (
         <>
-            <nav style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)' }}>
+         {/* style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)', background: isScroll && 'white', boxShadow: isScroll && '' }} */}
+            <nav>
                 <div className='img-nama'>
                     <img className='navhome-img' src="./src/assets/react.svg"/>
                     <span className='nav-name'>RANGGA SUKMANA MILDAN</span>
                 </div>
                 <ol className='olnav'>
                     <li className='linav'>About</li>
+                    <li className='linav'>Work</li>
                     <li className='linav'>Project</li>
                     {/* <li className='linav'>Contact</li> */}
                     <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact</button>

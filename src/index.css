@@ -2,6 +2,15 @@ html body {
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:not(.containerTrail):not(.wrap-profile) {
+  z-index: 2;
 }
 
 .mainContainer {
@@ -9,77 +18,187 @@ html body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   margin: 0 !important;
-}
-
-@keyframes fade {
-  from{
-    opacity: 0.5;
-    scale: 0.5;
-    /* transform: translateX(-200px); */
-  }
-  to{
-    opacity: 1;
-    scale: 1;
-    /* transform: translateX(0); */
-  }
+  background: rgb(232, 255, 227);
+  z-index: 2;
 }
 
 .wrap-head{
   display: flex;
   flex-direction: row;
-
+  /* border: 1px solid black; */
   width: 100vw;
   height: 100vh;
   justify-content: center;
   text-align: center;
   align-items: center;
-  /* animation: fade linear;
-  animation-timeline: view();
-  animation-duration: 1ms;
-  animation-range: entry 0 cover 40%; */
 }
 
 .wrap-head .box-head {
   display: flex;
   flex-direction: column;
+  /* border: 1px solid red; */
 }
 
 .wrap-head .box-head .head-span-name {
   font-size: 50px;
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: limegreen;
+  color: rgb(45, 209, 45);
 }
 
 .wrap-head .box-head .head-span-job {
   font-size: 14px;
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: green;
+  color: rgb(73, 97, 73);
 }
 
-.box {
-  border: 2px solid black;
-  margin: 10px;
+.wrap-profile {
+ display: flex;
+ width: 100%;
+ height: 540px;
+ /* border: 1px solid red; */
+ padding-top: 20px;
+ padding-bottom: 20px;
+ padding-left: 80px;
+ padding-right: 80px;
+ background: rgb(73, 97, 73);
 }
 
-.block1 {
-  width: 200px;
-  height: 200px;
-  background-color: orange;
+.wrap-profile .card-profile {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  /* border: 1px solid black; */
+  background: whitesmoke;
+  box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .3);
 }
 
-.block2 {
-  width: 400px;
-  height: 200px;
-  background-color: red;
+.wrap-profile .card-profile .card-photo {
+  width: 30%;
+  border-right: 1px solid darkgreen;
+  justify-content: center;
+  justify-items: center;
 }
 
-.block3 {
-  width: 600px;
-  height: 200px;
-  background-color: burlywood;
+.wrap-profile .card-profile .card-photo img { 
+  width: 300px;
+}
+
+.wrap-profile .card-profile .card-text {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 50%;
+  border-right: 0 solid darkgreen;
+}
+
+.wrap-experience {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  background: rgb(124, 250, 107);
+  /* text-align: center; */
+}
+
+.wrap-experience .title-wrp-exp {
+  font-size: 40px;
+  text-align: center;
+}
+
+.wrap-experience .list-experience {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  /* border: 1px solid black; */
+}
+
+.box-btn-experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.btn-list-experience {
+  width: 100px;
+  height: 50px;
+}
+
+.btn-list-experience:hover {
+  background: white;
+}
+
+.detail-experience {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.detail-experience .exp-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.detail-experience .exp-description {
+  margin-top: 20px;
+  text-indent: 50px;
+  margin-bottom: 50px;
+}
+
+.detail-experience .exp-wh-i-lrn {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.detail-experience .exp-skills {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detail-experience .exp-skills span {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background: rgb(3, 177, 46);
+  border-radius: 20px;
+  width: 150px;
+  height: 30px;
+}
+
+.wrap-project {
+ display: flex;
+ flex-direction: column;
+}
+
+.wrap-project .title-prj {
+  text-align: center;
+  font-size: 40px;
+}
+.project-project {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-project img {
+  width: 100%;
+  align-items: center;
+  height: 300px;
+}
+
+.project-project .project-description {
+  text-indent: 50px;
 }
