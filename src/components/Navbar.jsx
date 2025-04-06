@@ -32,6 +32,11 @@ export default function Navbar() {
     };
     }, []);
 
+    function scrollToSection(param) {
+        const section = document.getElementById(param);
+        section?.scrollIntoView({ behavior: 'smooth' });
+      };
+
     return (
         <>
          {/* style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)', background: isScroll && 'white', boxShadow: isScroll && '' }} */}
@@ -41,9 +46,9 @@ export default function Navbar() {
                     <span className='nav-name'>RANGGA SUKMANA MILDAN</span>
                 </div>
                 <ol className='olnav'>
-                    <li className='linav'>About</li>
-                    <li className='linav'>Work</li>
-                    <li className='linav'>Project</li>
+                    <li className='linav' onClick={() => scrollToSection('halId')}>About</li>
+                    <li className='linav' onClick={() => scrollToSection('halExp')}>Experience</li>
+                    <li className='linav' onClick={() => scrollToSection('halProject')}>Project</li>
                     {/* <li className='linav'>Contact</li> */}
                     <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact</button>
                     {isOpen && (
