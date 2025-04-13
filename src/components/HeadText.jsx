@@ -1,12 +1,12 @@
 import '../style/headtext.css'
 
-export default function HeadText() {
+export default function HeadText({nameText, titlejob}) {
     return(
         <>
         <div className='wrap-head'>
           <div className='box-head'>
-            <span className='head-span-name'>RANGGA SUKMANA MILDAN</span>
-            <span className='head-span-job'>Front-end Web Developer / Full-Stack Web Developer</span>
+            <span className='head-span-name'>{nameText}</span>
+            <span className='head-span-job'>{titlejob}</span>
           </div>
         </div>
         </>

@@ -1,10 +1,37 @@
 import Navbar from './components/Navbar.jsx'
 import HeadText from './components/HeadText.jsx'
 import EffectTrail from './components/EffectTrail.jsx'
-import { useState } from "react"
+import LoaderFirst from './components/LoaderFirst.jsx'
+
+import { db } from '../firebase'; // Import the db object from your firebase.js file
+import { collection, getDocs } from "firebase/firestore"
+
+import { useState, useEffect } from "react"
 import './index.css'
 
 function App() {
+
+  const [dataFirebase, setDataFirebase] = useState([]);
+  let nameText = '';
+  let titlejob = '';
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const querySnapshot = await getDocs(collection(db, "data-profile"));
+        setDataFirebase(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+
+      }
+    }
+    fetchData();
+  }, []);
+
+  nameText = dataFirebase[0]?.name;
+  titlejob = dataFirebase[0]?.titlejob;
+
   const [arrSkills, setArrSkills] = useState([false,false,false,true]);
   const [expSkill, setExpSkill] = useState(['Linux Operation','Shell Script','Redis','Elasticsearch']);
 
@@ -34,9 +61,11 @@ function App() {
   return (
     <>
       <EffectTrail />
-      <Navbar />
+      <Navbar nameText={nameText?.toUpperCase()} />
       <div className='mainContainer'>
-        <HeadText />
+        <HeadText nameText={nameText?.toUpperCase()} titlejob={titlejob} />
+        <LoaderFirst />
+        {/* <span className="loaderFirst"></span> */}
 
         <div className='wrap-profile' id='halId'>
           <div className='card-profile'>

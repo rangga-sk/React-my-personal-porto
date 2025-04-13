@@ -19,12 +19,13 @@
     font-size: 80px;
     font-weight: bold;
     font-family: 'Monterey';
-    color: rgb(52, 175, 52);
+    /* color: rgb(34, 41, 34); */
+    color: rgb(73, 97, 73);
 }
 
 .wrap-head .box-head .head-span-job {
     font-size: 16px;
     font-weight: bold;
     /* font-family: 'Monterey'; */
-    color: rgb(7, 46, 7);
+    color: rgb(73, 97, 73);
 }

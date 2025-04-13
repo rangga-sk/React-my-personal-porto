@@ -1,22 +1,13 @@
 import '../style/navbar.css'
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
+export default function Navbar({nameText}) {
     
     const [isOpen, setIsOpen] = useState(false);    
-    const [isScroll, setIsScroll] = useState(false);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 200) {
-            setIsScroll(!isOpen);
-        } else {
-            setIsScroll(false);
-        }
-    });
 
     // close dropdown jika user klik diluar tombol dropdown
     useEffect(() => {
@@ -35,7 +26,7 @@ export default function Navbar() {
     function scrollToSection(param) {
         const section = document.getElementById(param);
         section?.scrollIntoView({ behavior: 'smooth' });
-      };
+    };
 
     return (
         <>
@@ -43,7 +34,7 @@ export default function Navbar() {
             <nav>
                 <div className='img-nama'>
                     <img className='navhome-img' src="./src/assets/react.svg"/>
-                    <span className='nav-name'>RANGGA SUKMANA MILDAN</span>
+                    <span className='nav-name'>{nameText}</span>
                 </div>
                 <ol className='olnav'>
                     <li className='linav' onClick={() => scrollToSection('halId')}>About</li>
