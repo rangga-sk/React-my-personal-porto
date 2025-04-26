@@ -1,0 +1,48 @@
+
+.wrap-project {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(245, 255, 244);
+    padding: 20px;
+   }
+   
+   .wrap-project .title-prj {
+     margin-top: 20px;
+     font-size: 40px;
+     text-align: center;
+     font-family: 'Monterey-slim';
+     color: rgb(73, 97, 73);
+   }
+   
+   .project-all {
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+     margin-bottom: 20px;
+   }
+   
+   .project-all .project-title {
+     font-size: 25px;
+     margin-top: 30px;
+     color: rgb(73, 97, 73);
+     font-family: 'Robotocon';
+   }
+   
+   .div-prj-image {
+     width: 100%;
+     height: 500px;
+   }
+   
+   .project-all img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+   }
+   
+   .project-all .project-description {
+     text-indent: 50px;
+     font-family: 'Robotocon';
+     color: rgb(49, 68, 49);
+     text-align: justify;
+   }

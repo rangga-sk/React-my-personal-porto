@@ -1,7 +1,7 @@
 import '../style/navbar.css'
 import { useState, useEffect } from 'react';
 
-export default function Navbar({nameText}) {
+export default function Navbar({nameText, dataContact}) {
     
     const [isOpen, setIsOpen] = useState(false);    
 
@@ -33,7 +33,7 @@ export default function Navbar({nameText}) {
          {/* style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)', background: isScroll && 'white', boxShadow: isScroll && '' }} */}
             <nav>
                 <div className='img-nama'>
-                    <img className='navhome-img' src="./src/assets/react.svg"/>
+                    {/* <img className='navhome-img' src="./src/assets/react.svg"/> */}
                     <span className='nav-name'>{nameText}</span>
                 </div>
                 <ol className='olnav'>
@@ -44,8 +44,11 @@ export default function Navbar({nameText}) {
                     <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact</button>
                     {isOpen && (
                         <div className="navDropdown">
-                            <a href="mailto:sukmana.vector@gmail.com" target='_blank'>Mail</a>
-                            <a href="https:/linkedin.com/in/rangga-sukmana-mildan-862a67349" target='_blank'>Linked-in</a>
+                            {dataContact.map((curr, key, value) => {
+                                return (
+                                    <a key={key} target='_blank' href={value[key].includes("|") ? value[key].split("|")[1].trim() : ""}>{value[key].includes("|") ? value[key].split("|")[0].trim() : value[key]}</a>
+                                )
+                            })}
                         </div>
                     )}
                 </ol>

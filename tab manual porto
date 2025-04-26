@@ -1,0 +1,79 @@
+import { useState } from 'react';
+import '../style/workexperience.css'
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function WorkExperience() {
+  
+  const [arrSkills, setArrSkills] = useState([false,false,false,true]);
+  const [expSkill, setExpSkill] = useState(['Linux Operation','Shell Script','Redis','Elasticsearch']);
+  const [clickBtn, setClicketBtn] = useState(false);
+
+  function activeBtnExp(number) {
+    setClicketBtn(!clickBtn);
+    if (number === 0) {
+      document.getElementById('expTitle').innerText = 'Intern Programmer';
+      document.getElementById('expDateTime').innerText = '12 August 2021 - 28 December 2025';
+      setExpSkill(['Linux Operation','Shell Script','Redis','Elasticsearch']);
+    } else if (number === 1) {
+      document.getElementById('expTitle').innerText = 'Data Analyst';
+      document.getElementById('expDateTime').innerText = '12 August 2021 - 28 December 2025';
+      setExpSkill(['Linux Operation','Shell Script','Redis','Elasticsearch', 'Quasar Framework', 'Git & Github','React']);
+    } else if (number === 2) {
+      document.getElementById('expTitle').innerText = 'IT Auditor';
+      document.getElementById('expDateTime').innerText = '12 August 2021 - 28 December 2025';
+      setExpSkill(['Linux Operation','Shell Script','Redis','Elasticsearch','PHP OOP']);
+    } else if (number === 3) {
+      document.getElementById('expTitle').innerText = 'Full-Stack Developer';
+      document.getElementById('expDateTime').innerText = '12 August 2021 - 28 December 2025';
+      setExpSkill(['Linux Operation','Shell Script','Redis','Elasticsearch']);
+    }
+    const updatedArr = arrSkills.map((_, i) => i === number);
+    setArrSkills(updatedArr);
+  }
+
+    return (
+        <>
+        <div className='wrap-experience' id='halExp'>
+          <span className='title-wrp-exp'>WORK EXPERIENCE</span>
+          <div className='list-experience'>
+            <div className='box-btn-experience'>
+              <button className='btn-list-experience' onClick={() => activeBtnExp(0)} style={{background: arrSkills[0] && 'rgb(73, 97, 73)', color: arrSkills[0] && 'white'}}>
+                Intern Programmer
+              </button>
+              <div className="segitiga-active" style={{visibility: !arrSkills[0] && 'hidden'}}></div>
+            </div>
+            <div className='box-btn-experience'>
+              <button className='btn-list-experience' onClick={() => activeBtnExp(1)} style={{background: arrSkills[1] && 'rgb(73, 97, 73)', color: arrSkills[1] && 'white'}}>
+                Data Analyst
+              </button>
+              <div className="segitiga-active" style={{visibility: !arrSkills[1] && 'hidden'}}></div>
+            </div>
+            <div className='box-btn-experience'>
+              <button className='btn-list-experience' onClick={() => activeBtnExp(2)} style={{background: arrSkills[2] && 'rgb(73, 97, 73)', color: arrSkills[2] && 'white'}}>
+                IT Auditor
+              </button>
+              <div className="segitiga-active" style={{visibility: !arrSkills[2] && 'hidden'}}></div>
+            </div>
+            <div className='box-btn-experience'>
+              <button className='btn-list-experience'  onClick={() => activeBtnExp(3)} style={{background: arrSkills[3] && 'rgb(73, 97, 73)', color: arrSkills[3] && 'white'}}>
+                Full-Stack Developer
+              </button>
+              <div className="segitiga-active" style={{visibility: !arrSkills[3] && 'hidden', animationPlayState: clickBtn && 'paused'}}></div>
+            </div>
+          </div>
+          <div id='customFadeBox' className='detail-experience' style={{animationPlayState: 'running'}}>
+              <span className='exp-title' id='expTitle'>Intern Programmer</span>
+              <span className='exp-datetime' id='expDateTime'>12 August 2021 - 16 May 2021</span>
+              <p className='exp-description' id='expDesc'>I began my career at PT Wahana Prestasi Logistik as an intern before eventually becoming a contract employee. During my internship, I learned to work with the Linux operating system (Ubuntu), which was pre-configured on the office machines. I also studied how to create shell scripts to read log files from Nginx and push the extracted data into a Redis database. Once the data was stored in Redis, I developed an additional shell script to retrieve the data and transfer it into MySQL. Finally, the data stored in MySQL was processed and indexed into Elasticsearch using Logstash. </p>
+              <div className='exp-skills'>
+                {expSkill.map((val, index) => {
+                  return (
+                    <span key={index}>{val}</span>
+                  )
+                })}
+              </div>
+          </div>
+        </div>
+        </>
+    )
+}

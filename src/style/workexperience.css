@@ -1,0 +1,69 @@
+.wrap-experience {
+  background-color: #d9f99d;
+  height: 550px;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.containerHeadJob {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 100%;
+  justify-content: space-around;
+  /* margin: 15px; */
+}
+
+.btn-experience {
+  cursor: pointer;
+  display: flex;
+  background-color: rgba(73,97,73,255);
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  font-size: 16px;
+  height: 120px;
+}
+
+.activeDivExp {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgb(34, 134, 34);
+  background: rgb(165, 238, 165);
+  border: 1px solid rgba(50, 80, 50, .2);
+}
+
+.contentExp {
+  background-color: rgba(232,255,227,255);
+  height: 300px;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+}
+
+
+.divListSkillExp {
+  display: flex;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.listSkillExp {
+  font-family: 'Robotocon';
+  display: inline-block;
+  text-align: center;
+  align-content: center;
+  height: 30px;
+  width: 150px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  background-color: limegreen;
+}
