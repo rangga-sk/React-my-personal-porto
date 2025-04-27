@@ -1,7 +1,7 @@
 import '../style/navbar.css'
 import { useState, useEffect } from 'react';
 
-export default function Navbar({nameText, dataContact}) {
+export default function Navbar({EffectRain, setEffectRain, dataContact, namaPanggil}) {
     
     const [isOpen, setIsOpen] = useState(false);    
 
@@ -28,20 +28,37 @@ export default function Navbar({nameText, dataContact}) {
         section?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    // tombol burger untuk
+    const [isOpenNav, setIsOpenNav] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpenNav(!isOpenNav);
+    };
+
+    
+    function aktifEfek() {
+        setEffectRain(!EffectRain);
+    }
+
     return (
         <>
          {/* style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)', background: isScroll && 'white', boxShadow: isScroll && '' }} */}
             <nav>
                 <div className='img-nama'>
                     {/* <img className='navhome-img' src="./src/assets/react.svg"/> */}
-                    <span className='nav-name'>{nameText}</span>
+                    <span className='nav-name' onClick={aktifEfek}>{namaPanggil}</span>
                 </div>
-                <ol className='olnav'>
+                <div class="toggle-nav" onClick={toggleMenu}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ol className={`olnav ${isOpenNav ? 'show' : ''}`}>
                     <li className='linav' onClick={() => scrollToSection('halId')}>About</li>
                     <li className='linav' onClick={() => scrollToSection('halExp')}>Experience</li>
                     <li className='linav' onClick={() => scrollToSection('halProject')}>Project</li>
                     {/* <li className='linav'>Contact</li> */}
-                    <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact</button>
+                    <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact
                     {isOpen && (
                         <div className="navDropdown">
                             {dataContact.map((curr, key, value) => {
@@ -51,6 +68,7 @@ export default function Navbar({nameText, dataContact}) {
                             })}
                         </div>
                     )}
+                    </button>
                 </ol>
             </nav>
         </>

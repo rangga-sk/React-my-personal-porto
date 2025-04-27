@@ -7,7 +7,7 @@ import WorkExperience from './components/WorkExperience.jsx'
 import ProjectData from './components/ProjectData.jsx'
 
 import { db } from '../firebase';
-import { collection, getDocs, doc, getDoc } from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import './index.css'
 
@@ -22,6 +22,7 @@ function App() {
   const [flagDoneApi, setFlagDoneApi] = useState(true);
 
   let nameText = '';
+  let namaPanggil = '';
   let titlejob = '';
   let contact = '';
 
@@ -102,8 +103,11 @@ function App() {
   
 
   nameText = dataFullName?.name;
+  namaPanggil = dataFullName?.aka;
   titlejob = dataFullName?.titlejob;
   contact = dataFullName?.contact;
+
+  const [EffectRain, setEffectRain] = useState(true);
 
   if (Loader) {
     return (
@@ -114,8 +118,8 @@ function App() {
   } else {
     return (
       <>
-        <EffectTrail />
-        <Navbar nameText={nameText?.toUpperCase()} dataContact={contact} />
+        {(EffectRain && <EffectTrail />)}
+        <Navbar EffectRain={EffectRain} setEffectRain={setEffectRain} dataContact={contact} namaPanggil={namaPanggil?.toUpperCase()} />
         <div className='mainContainer'>
           <HeadText nameText={nameText?.toUpperCase()} titlejob={titlejob} />
           <ProfileData dataAbout={dataFullAbout} />

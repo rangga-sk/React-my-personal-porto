@@ -1,7 +1,6 @@
 import '../style/projectdata.css'
 
 export default function ProjectData({dataProject}) {
-  console.log(dataProject);
     return (
         <>
         <div className='wrap-project' id='halProject'>

@@ -1,16 +1,23 @@
 .wrap-experience {
   background-color: #d9f99d;
-  height: 550px;
+  min-height: 600px;
   width: 100%;
   padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .containerHeadJob {
   display: flex;
   flex-direction: row;
-  height: 100px;
-  width: 100%;
+  flex-wrap: wrap;
+  height: 130px;
+  /* min-width: 100vh; */
+  /* overflow-x: scroll; */
   justify-content: space-around;
+  gap: 50px;
+  /* background: red; */
   /* margin: 15px; */
 }
 
@@ -29,6 +36,17 @@
   height: 120px;
 }
 
+@media (max-width: 768px) {
+  .containerHeadJob {
+    overflow-x: scroll;
+    flex-wrap: nowrap; /* supaya tidak turun ke bawah */
+  }
+
+  .btn-experience {
+    flex: 0 0 auto; /* item tetap ukurannya, tidak mengecil */
+  }
+}
+
 .activeDivExp {
   text-align: center;
   align-items: center;
@@ -40,16 +58,18 @@
 
 .contentExp {
   background-color: rgba(232,255,227,255);
-  height: 300px;
-  margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
+  min-height: 300px;
+  width: 100%;
+  margin-top: 50px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
   padding: 20px;
 }
 
 
 .divListSkillExp {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 30px;
   gap: 10px;
 }

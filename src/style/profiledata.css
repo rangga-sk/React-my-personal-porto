@@ -1,109 +1,116 @@
 .wrap-profile {
     display: flex;
     width: 100%;
-    height: 640px;
+    min-height: 640px;
     /* border: 1px solid red; */
-    padding-top: 50px;
+    /* padding-top: 50px;
     padding-left: 80px;
-    padding-right: 80px;
+    padding-right: 80px; */
+    padding: 50px 50px 80px 80px;
     background: rgb(73, 97, 73);
-   }
-   
-   .wrap-profile .card-profile {
-     display: flex;
-     width: 100%;
-     height: 500px;
-     /* border: 1px solid black; */
-     background: whitesmoke;
-     box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .3);
-   }
-   
-   .wrap-profile .card-profile .card-photo {
-     width: 30%;
-     justify-content: center;
-     justify-items: center;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
-   
-   .wrap-profile .card-profile .card-photo img { 
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-   }
-   
-   .wrap-profile .card-profile .card-text {
-     display: flex;
-     position: relative;
-     flex-direction: column;
-     width: 70%;
-     padding: 15px;
-   }
-   
-   .card-text .card-text-aboutme {
-     font-family: 'Monterey-slim';
-     font-size: 50px;
-     color: rgb(73, 97, 73);
-   }
-   
-   .card-text .card-aboutme-desc {
-     text-indent: 30px;
-     font-family: 'Robotocon';
-     text-align: justify;
-     margin-top: 50px;
-     color: rgb(49, 68, 49);
-     font-size: 18px;
-     /* border: 1px solid yellow; */
-   }
-   
-   .about-detail {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     font-size: 14px;
-     margin-top: 150px;
-     /* border: 1px solid red; */
-     justify-content: space-around;
-   }
-   
-   .about-detail .location-detail {
-     display: flex;
-     flex-direction: row;
-     gap: 5px;
-     border-radius: 20px;
-     padding: 7px;
-     font-family: 'Robotocon';
-     text-align: center;
-     color: rgb(20, 54, 20);
-   }
-   
-   .about-detail .location-detail .desc-loc-icon {
-     font-weight: bold;
-     font-size: 20px;
-     width: 20px;
-     height: 20px;
-     background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M168 0C75.2 0 0 75.2 0 168c0 87.5 125.7 253.5 168 344 42.3-90.5 168-256.5 168-344C336 75.2 260.8 0 168 0zm0 240c-39.8 0-72-32.2-72-72s32.2-72 72-72 72 32.2 72 72-32.2 72-72 72z"/></svg>') no-repeat center;
-     background-size: contain;;
-   }
-   
-   .about-detail .location-detail .desc-smk-icon {
-     width: 20px;
-     height: 20px;
-     background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 0L0 128l64 32v256H32c-17.7 0-32 14.3-32 32v32h576v-32c0-17.7-14.3-32-32-32h-32V160l64-32L288 0zM192 224h64v64h-64v-64zm128 0h64v64h-64v-64z"/></svg>') no-repeat center;
-     background-size: contain;
-   }
-   
-   .about-detail .desc-smk {
-     color: rgb(20, 54, 20);
-     text-align: center;
-   }
-   
-   .about-detail .location-detail .desc-kuliah-icon {
-     width: 20px;
-     height: 20px;
-     background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 32L0 160l320 128 192-76.8V352h64V211.2l64-25.6L320 32zm-48 352H80c-26.5 0-48 21.5-48 48v32h288v-32c0-26.5-21.5-48-48-48z"/></svg>') no-repeat center;
-     background-size: contain;
-   }
-   
-  
+}
+
+.wrap-profile .card-profile {
+  display: flex;
+  width: 100%;
+  min-height: 500px;
+  /* border: 1px solid black; */
+  background: whitesmoke;
+  box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 768px) {
+  .wrap-profile .card-profile {
+    flex-direction: column;
+  }
+}
+
+.wrap-profile .card-profile .card-photo {
+  min-width: 30%;
+  min-height: 500px;
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap-profile .card-profile .card-photo img { 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrap-profile .card-profile .card-text {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-width: 70%;
+  padding: 15px;
+}
+
+.card-text .card-text-aboutme {
+  font-family: 'Monterey-slim';
+  font-size: 50px;
+  color: rgb(73, 97, 73);
+}
+
+.card-text .card-aboutme-desc {
+  text-indent: 30px;
+  font-family: 'Robotocon';
+  text-align: justify;
+  margin-top: 50px;
+  color: rgb(49, 68, 49);
+  font-size: 18px;
+  /* border: 1px solid yellow; */
+}
+
+.about-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-top: 150px;
+  /* border: 1px solid red; */
+  justify-content: space-around;
+}
+
+.about-detail .location-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 7px;
+  font-family: 'Robotocon';
+  text-align: center;
+  color: rgb(20, 54, 20);
+}
+
+.about-detail .location-detail .desc-loc-icon {
+  font-weight: bold;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M168 0C75.2 0 0 75.2 0 168c0 87.5 125.7 253.5 168 344 42.3-90.5 168-256.5 168-344C336 75.2 260.8 0 168 0zm0 240c-39.8 0-72-32.2-72-72s32.2-72 72-72 72 32.2 72 72-32.2 72-72 72z"/></svg>') no-repeat center;
+  background-size: contain;;
+}
+
+.about-detail .location-detail .desc-smk-icon {
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 0L0 128l64 32v256H32c-17.7 0-32 14.3-32 32v32h576v-32c0-17.7-14.3-32-32-32h-32V160l64-32L288 0zM192 224h64v64h-64v-64zm128 0h64v64h-64v-64z"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+.about-detail .desc-smk {
+  color: rgb(20, 54, 20);
+  text-align: center;
+}
+
+.about-detail .location-detail .desc-kuliah-icon {
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="rgb(73, 97, 73)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 32L0 160l320 128 192-76.8V352h64V211.2l64-25.6L320 32zm-48 352H80c-26.5 0-48 21.5-48 48v32h288v-32c0-26.5-21.5-48-48-48z"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
