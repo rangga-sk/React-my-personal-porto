@@ -1,8 +1,32 @@
 import '../style/navbar.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-export default function Navbar({EffectRain, setEffectRain, dataContact, namaPanggil}) {
-    
+export default function Navbar({EffectRain, setEffectRain, dataContact}) {
+    const boxRef = useRef(null);
+    useEffect(() => {
+      if (boxRef.current) {
+        boxRef.current.innerHTML = "";
+
+        let spans = [];
+        for (let i = 0; i < 40; i++) {
+          let span = document.createElement('span');
+          spans.push(span);
+          boxRef.current.appendChild(span);
+          span.style.top = `${i * 1}px`;
+          let delay = (Math.random() * 0.25) + 0;
+          span.style.transitionDelay = delay + 's';
+        }
+      }
+    }, []);
+
+
+    function effectSlide() {
+      boxRef.current.classList.toggle('activeBox');
+      setTimeout(() => {
+        setEffectRain(!EffectRain);
+      }, 100);
+    };
+
     const [isOpen, setIsOpen] = useState(false);    
 
     const toggleDropdown = () => {
@@ -35,20 +59,18 @@ export default function Navbar({EffectRain, setEffectRain, dataContact, namaPang
         setIsOpenNav(!isOpenNav);
     };
 
-    
-    function aktifEfek() {
-        setEffectRain(!EffectRain);
-    }
 
     return (
         <>
          {/* style={{borderBottom: isScroll && '1px solid rgb(62, 224, 62)', background: isScroll && 'white', boxShadow: isScroll && '' }} */}
             <nav>
                 <div className='img-nama'>
+                    <div ref={boxRef} className='boximg' onClick={() => {effectSlide();}}></div>
+                    {/* <div className='box'></div> */}
                     {/* <img className='navhome-img' src="./src/assets/react.svg"/> */}
-                    <span className='nav-name' onClick={aktifEfek}>{namaPanggil}</span>
+                    {/* <span className='nav-name' onClick={aktifEfek}>{namaPanggil}</span> */}
                 </div>
-                <div class="toggle-nav" onClick={toggleMenu}>
+                <div className="toggle-nav" onClick={toggleMenu}>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -58,7 +80,7 @@ export default function Navbar({EffectRain, setEffectRain, dataContact, namaPang
                     <li className='linav' onClick={() => scrollToSection('halExp')}>Experience</li>
                     <li className='linav' onClick={() => scrollToSection('halProject')}>Project</li>
                     {/* <li className='linav'>Contact</li> */}
-                    <button type="button" style={{backgroundColor: isOpen && 'limegreen', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact
+                    <button type="button" style={{backgroundColor: isOpen && '#3a5f3a', color: isOpen && 'rgb(207, 236, 207)'}} onClick={toggleDropdown} className='contact-button'>Contact
                     {isOpen && (
                         <div className="navDropdown">
                             {dataContact.map((curr, key, value) => {

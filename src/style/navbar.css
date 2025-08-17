@@ -47,6 +47,38 @@ nav .img-nama {
     /* border: 1px solid green; */
 }
 
+nav .img-nama .boximg {
+    position: relative;
+    /* background-color: white; */
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    /* filter: drop-shadow(0 0 2px rgb(210, 238, 1)) drop-shadow(0 0 1px rgb(210, 238, 1)); */
+}
+
+nav .img-nama .boximg::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    /* border-radius: 10px; */
+    border-top: 2px solid #6d7a05;
+    border-bottom: 2px solid #6d7a05;
+}
+
+nav .img-nama .boximg span {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background:  #1ace7a;
+    pointer-events: none;
+    border-radius: 100%;
+    transition: 0.1s ease-in-out;
+}
+
+nav .img-nama .activeBox span {
+    transform: translateX(80px);
+}
+
 nav .nav-name {
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     /* color: rgb(73, 97, 73); */
@@ -86,7 +118,8 @@ nav .navhome-img {
     text-align: center;
     align-content: center;
     border-radius: 20px;
-    color: rgb(34, 41, 34);
+    color: #4a924a;
+    font-weight: bolder;
     margin-top: 1px;
     background-color: none;
     font-size: 20px;
@@ -94,7 +127,7 @@ nav .navhome-img {
 
 .olnav li:hover{
     color: rgb(207, 236, 207);
-    background-color: limegreen;
+    background-color: #3a5f3a;
 }
 
 .olnav .contact-button {
@@ -102,9 +135,11 @@ nav .navhome-img {
     font-family: 'Monterey-slim';
     box-shadow: none;
     outline: none;
-    color: rgb(34, 41, 34);
+    color: #4a924a;
+    /* color: #f5f538; */
     font-size: 20px;
     border: none;
+    font-weight: bolder;
     position: relative;
     /* border: 1px solid black; */
     cursor: pointer;
@@ -117,7 +152,7 @@ nav .navhome-img {
 
 .olnav .contact-button:hover {
     color: rgb(207, 236, 207);
-    background-color: limegreen;   
+    background-color: #3a5f3a;
 }
 
 .navDropdown {
@@ -137,7 +172,7 @@ nav .navhome-img {
     text-align: center;
     padding: 10px;
     display: inline-block;
-    color: black;
+    color: #394239;
     height: 80px;
     border-bottom: 1px solid limegreen;
     background-color: rgb(192, 255, 180);
@@ -145,7 +180,8 @@ nav .navhome-img {
 }
 
 .navDropdown a:hover {
-    background-color: gainsboro;
+    color: white;
+    background-color: #3a5f3a;
 }
 
 /* RESPONSIVE GES */

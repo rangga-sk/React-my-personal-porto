@@ -10,10 +10,13 @@
 	pointer-events: none;
 }
 
+
 .round {
 	position: absolute;
 	width: 5px;
 	height: 5px;
+	display: flex;
+	justify-content: center;
 	border-radius: 50%;
 	background-color: lightgreen;
 	border: 5px solid lightgreen;

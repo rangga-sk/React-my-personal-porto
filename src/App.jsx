@@ -107,7 +107,7 @@ function App() {
   titlejob = dataFullName?.titlejob;
   contact = dataFullName?.contact;
 
-  const [EffectRain, setEffectRain] = useState(true);
+  const [EffectRain, setEffectRain] = useState(false);
 
   if (Loader) {
     return (
@@ -136,7 +136,7 @@ function App() {
             width: "50px",
             height: "50px",
             borderRadius: "50%",
-            backgroundColor: "limegreen",
+            backgroundColor: "#e9e93f",
             color: "white",
             border: "none",
             // boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
