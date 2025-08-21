@@ -5,6 +5,7 @@
     min-height: 100vh;
     background: rgb(245, 255, 244);
     padding: 20px;
+    overflow-x: hidden;
    }
    
    .wrap-project .title-prj {
@@ -30,13 +31,31 @@
    }
    
    .div-prj-image {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     flex-wrap: wrap;
      width: 100%;
      height: 500px;
    }
-   
-   .project-all img {
-     width: 100%;
-     height: 100%;
+   @media (max-width: 768px) {
+    .div-prj-image {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .project-all .div-prj-image img {
+      width: 200px;
+      margin-bottom: 20px;
+      height: auto;
+    }
+    
+  }
+   .project-all .div-prj-image img {
+     width: 200px;
+     height: auto;
+     flex-shrink: 0;
      object-fit: contain;
    }
    

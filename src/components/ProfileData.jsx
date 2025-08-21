@@ -6,7 +6,7 @@ export default function ProfileData({dataAbout}) {
     <div className='wrap-profile' id='halId'>
           <div className='card-profile'>
             <div className='card-photo'>
-              <img src="./photo-aboutme.png" alt=""/>
+              <img src={dataAbout.aboutaddr.img_profile} alt=""/>
             </div>
             <div className='card-text'>
               <span className='card-text-aboutme'>ABOUT ME</span>
