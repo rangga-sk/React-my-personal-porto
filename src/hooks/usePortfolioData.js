@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
 import { localProjects } from '../data/projects';
 import {

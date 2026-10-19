@@ -1,6 +1,6 @@
 import { usePortfolio } from '../../context/PortfolioContext';
 import { collectSkills, toParagraphs } from '../../lib/portfolio';
-import Gem from '../ui/Gem';
+// import Gem from '../ui/Gem';
 import Reveal from '../ui/Reveal';
 import { GraduationCap, MapPin } from '../ui/Icons';
 import '../../styles/about.css';
