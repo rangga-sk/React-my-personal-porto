@@ -10,7 +10,7 @@ export default defineConfig(async () => {
   if (port !== preferredPort) {
     console.log(`Port recent ${port} ⚠️`);
   }
-  
+
   return {
     plugins: [react()],
     server: {
